@@ -1,22 +1,27 @@
-import os
 import time
 import imaplib
 import email
 from email.header import decode_header
 import requests
 
-# --- Configuration ---
-IMAP_SERVER = os.environ.get("IMAP_SERVER", "imap.gmail.com")
-IMAP_PORT = int(os.environ.get("IMAP_PORT", 993))
-EMAIL_USER = os.environ.get("EMAIL_USER", "your-email@gmail.com")
-EMAIL_PASS = os.environ.get("EMAIL_PASS", "your-app-password")  # Use an App Password if using Gmail/2FA
-
-ALEXA_ACCESS_CODE = os.environ.get("ALEXA_ACCESS_CODE", "YOUR_NOTIFY_ME_ACCESS_CODE")
+# ==========================================
+# USER VARIABLES (EDIT THESE BEFORE RUNNING)
+# ==========================================
+ALEXA_ACCESS_CODE = "YOUR_NOTIFY_ME_ACCESS_CODE"
 ALEXA_API_URL = "https://api.notifymyecho.com/v1/NotifyMe"
 
-# Filter criteria to identify Opsgenie emails
+EMAIL_USER = "your.email@gmail.com"
+EMAIL_PASS = "your-16-digit-app-password"
+
+IMAP_SERVER = "imap.gmail.com"
+IMAP_PORT = 993
+
 SENDER_FILTER = "noreply@opsgenie.com"
-POLL_INTERVAL = 15  # Time in seconds to wait between checks
+# ==========================================
+
+
+# --- Configuration & Setup ---
+POLL_INTERVAL = 15  # Time in seconds to wait between checking the inbox
 
 
 def decode_mime_words(s):
