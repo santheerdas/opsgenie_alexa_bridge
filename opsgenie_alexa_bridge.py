@@ -23,7 +23,6 @@ SENDER_FILTER = "noreply@opsgenie.com"
 # --- Configuration & Setup ---
 POLL_INTERVAL = 15  # Time in seconds to wait between checking the inbox
 
-
 def decode_mime_words(s):
     """Safely decode email headers like subjects."""
     if not s:
