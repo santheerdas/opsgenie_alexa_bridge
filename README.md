@@ -19,3 +19,5 @@ ALEXA_ACCESS_CODE="amzn1.ask.account.XYZ..."
 IMAP_SERVER="imap.gmail.com"
 
 python opsgenie_alexa_bridge.py
+
+###Documentation is in progress###
